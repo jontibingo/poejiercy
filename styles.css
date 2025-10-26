@@ -1,0 +1,92 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: url('images/background.png') center center/cover no-repeat;
+  position: relative;
+  font-family: 'Poppins', sans-serif;  /* replace if your site uses another font */
+  color: white;  /* adjust if your text is a different colour */
+}
+
+/* Overlay to ensure menu/logo stand out */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);  /* tweak opacity to match style */
+  z-index: -1;
+}
+
+/* Menu at top-right */
+.main-nav {
+  position: absolute;
+  top: 30px;        /* adjust for spacing above */
+  right: 40px;      /* adjust for spacing from right edge */
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;        /* adjust spacing between links */
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;     /* match your site’s link colour */
+  font-size: 1.1em; /* adjust size to approximate site */
+  letter-spacing: 1.5px;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #e0c68f;   /* example hover colour, adjust */
+}
+
+/* Logo at bottom-right */
+.logo-container {
+  position: absolute;
+  bottom: 30px;     /* adjust bottom margin */
+  right: 40px;      /* adjust right margin */
+}
+
+.logo {
+  height: 90px;     /* adjust size to match your site’s logo height */
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.logo:hover,
+.logo:focus {
+  opacity: 1.0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .main-nav {
+    top: 20px;
+    right: 20px;
+  }
+  .main-nav ul {
+    gap: 20px;
+  }
+  .logo-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  .logo {
+    height: 70px;
+  }
+}
